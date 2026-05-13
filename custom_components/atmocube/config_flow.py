@@ -78,7 +78,7 @@ class AtmocubeConfigFlow(ConfigFlow, domain=DOMAIN):
                 return "cannot_connect"
 
             result = await client.read_input_registers(
-                address=REGISTER_START, count=1, slave=slave_id
+                address=REGISTER_START, count=1, device_id=slave_id
             )
             if result.isError():
                 return "cannot_connect"
