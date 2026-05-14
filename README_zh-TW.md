@@ -20,7 +20,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Home%20Assistant-2025.6+-blue?logo=homeassistant" alt="HA 2025.6+"/>
+  <img src="https://img.shields.io/badge/Home%20Assistant-2026.5+-blue?logo=homeassistant" alt="HA 2026.5+"/>
   <img src="https://img.shields.io/badge/Python-3.13+-blue?logo=python" alt="Python 3.13+"/>
   <img src="https://img.shields.io/badge/License-MIT-green" alt="License"/>
   <img src="https://img.shields.io/badge/HACS-Compatible-orange?logo=homeassistant" alt="HACS"/>
@@ -267,6 +267,23 @@ logger:
   logs:
     custom_components.atmocube: debug
 ```
+
+---
+
+## 更新日誌
+
+### v1.1.0
+
+- **pymodbus 3.11.2 相容性**：將 `read_input_registers()` 的 `slave` 參數遷移為 `device_id`，配合 Home Assistant 2026.5.1 內建的 pymodbus 3.11.2 API 變更
+- **品牌圖片**：新增 `brand/` 目錄，包含自訂圖示與標誌（Home Assistant 2026.3 起支援自訂整合品牌圖片）
+- 最低 Home Assistant 版本提升至 2026.5.1
+- 最低 pymodbus 版本提升至 3.11.2
+
+### v1.0.0
+
+- 首次發布，透過 Modbus TCP 支援 20 個環境感測器
+- Config Flow UI 輕鬆設定
+- 相容 HACS
 
 ---
 

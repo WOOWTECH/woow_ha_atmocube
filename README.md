@@ -20,7 +20,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Home%20Assistant-2025.6+-blue?logo=homeassistant" alt="HA 2025.6+"/>
+  <img src="https://img.shields.io/badge/Home%20Assistant-2026.5+-blue?logo=homeassistant" alt="HA 2026.5+"/>
   <img src="https://img.shields.io/badge/Python-3.13+-blue?logo=python" alt="Python 3.13+"/>
   <img src="https://img.shields.io/badge/License-MIT-green" alt="License"/>
   <img src="https://img.shields.io/badge/HACS-Compatible-orange?logo=homeassistant" alt="HACS"/>
@@ -267,6 +267,23 @@ logger:
   logs:
     custom_components.atmocube: debug
 ```
+
+---
+
+## Changelog
+
+### v1.1.0
+
+- **pymodbus 3.11.2 compatibility**: Migrated `slave` parameter to `device_id` in `read_input_registers()` calls, matching the pymodbus 3.11.2 API shipped with Home Assistant 2026.5.1
+- **Brand images**: Added `brand/` directory with custom icon and logo (supported since Home Assistant 2026.3 for custom integrations)
+- Minimum Home Assistant version bumped to 2026.5.1
+- Minimum pymodbus version bumped to 3.11.2
+
+### v1.0.0
+
+- Initial release with 20 environmental sensors via Modbus TCP
+- Config flow UI for easy setup
+- HACS compatible
 
 ---
 
