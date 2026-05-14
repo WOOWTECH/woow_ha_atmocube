@@ -59,7 +59,7 @@ class AtmocubeCoordinator(DataUpdateCoordinator[dict[str, float]]):
             result = await self.client.read_input_registers(
                 address=REGISTER_START,
                 count=REGISTER_COUNT,
-                device_id=self.slave_id,
+                slave=self.slave_id,
             )
 
             if result.isError():

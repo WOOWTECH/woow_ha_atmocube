@@ -1,9 +1,10 @@
 {
   "domain": "atmocube",
   "name": "Atmocube Air Quality Sensor",
-  "codeowners": [],
+  "codeowners": ["@WOOWTECH"],
   "config_flow": true,
-  "documentation": "",
+  "documentation": "https://github.com/WOOWTECH/woow_ha_atmocube",
+  "issue_tracker": "https://github.com/WOOWTECH/woow_ha_atmocube/issues",
   "iot_class": "local_polling",
   "requirements": ["pymodbus>=3.6.0"],
   "version": "1.0.0"

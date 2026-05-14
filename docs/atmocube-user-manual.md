@@ -154,7 +154,7 @@ git clone https://github.com/WOOWTECH/woow_ha_atmocube.git
 **Step 3B.3: 重新啟動 Home Assistant**
 
 1. 前往 **Settings（設定）→ System（系統）→ Restart（重新啟動）**。
-2. 點選 **Restart** 並等待 Home Assistant 重新上線。
+2. 點選 **Restart Home Assistant** 並等待 Home Assistant 重新上線。
 
 ---
 
