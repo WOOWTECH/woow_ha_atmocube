@@ -42,7 +42,7 @@ class AtmocubeSensor(CoordinatorEntity[AtmocubeCoordinator], SensorEntity):
         super().__init__(coordinator)
         self._sensor_def = sensor_def
         self._attr_unique_id = f"{entry.entry_id}_{sensor_def.key}"
-        self._attr_name = sensor_def.name
+        self._attr_translation_key = sensor_def.key
         self._attr_native_unit_of_measurement = sensor_def.unit
         self._attr_device_class = sensor_def.device_class
         self._attr_state_class = sensor_def.state_class
