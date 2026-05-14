@@ -1,10 +1,34 @@
-[English](README.md)
+<p align="center">
+  <img src="custom_components/atmocube/brand/icon@2x.png" alt="Atmocube" width="120"/>
+</p>
 
-# Atmocube Home Assistant 自訂整合
+<h1 align="center">Atmocube Home Assistant 自訂整合</h1>
 
-## 概述
+<p align="center">
+  <strong>透過 Modbus TCP 進行室內空氣品質監測的 Home Assistant 整合</strong><br/>
+  20 個環境感測器，本地輪詢 — 不依賴雲端
+</p>
 
-Home Assistant 的 Atmocube 室內空氣品質監測器自訂整合。透過 Modbus TCP 協定使用 pymodbus 進行通訊，每 30 秒以單次批次讀取方式輪詢 20 個感測器暫存器。完全本地運作，不依賴雲端。
+<p align="center">
+  <a href="#功能特色">功能特色</a> &bull;
+  <a href="#架構">架構</a> &bull;
+  <a href="#前置需求">前置需求</a> &bull;
+  <a href="#安裝與設定">安裝與設定</a> &bull;
+  <a href="#授權條款">授權條款</a> &bull;
+  <a href="#參考資料">參考資料</a> &bull;
+  <a href="README.md">English</a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Home%20Assistant-2025.6+-blue?logo=homeassistant" alt="HA 2025.6+"/>
+  <img src="https://img.shields.io/badge/Python-3.13+-blue?logo=python" alt="Python 3.13+"/>
+  <img src="https://img.shields.io/badge/License-MIT-green" alt="License"/>
+  <img src="https://img.shields.io/badge/HACS-Compatible-orange?logo=homeassistant" alt="HACS"/>
+  <img src="https://img.shields.io/badge/IoT%20Class-Local%20Polling-brightgreen" alt="Local Polling"/>
+  <img src="https://img.shields.io/badge/Modbus%20TCP-pymodbus-purple" alt="Modbus TCP"/>
+</p>
+
+---
 
 ## 功能特色
 

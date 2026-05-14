@@ -1,8 +1,32 @@
-[繁體中文](README_zh-TW.md)
+<p align="center">
+  <img src="custom_components/atmocube/brand/icon@2x.png" alt="Atmocube" width="120"/>
+</p>
 
-# Atmocube Home Assistant Integration
+<h1 align="center">Atmocube Home Assistant Integration</h1>
 
-A custom Home Assistant integration for the **Atmocube** indoor air quality monitor. It communicates with the device via **Modbus TCP** using the [pymodbus](https://pymodbus.readthedocs.io/) library, polling 20 sensor registers every 30 seconds in a single batch read. The integration is fully local with no cloud dependency.
+<p align="center">
+  <strong>Indoor Air Quality Monitoring via Modbus TCP for Home Assistant</strong><br/>
+  20 environmental sensors with local polling — no cloud dependency
+</p>
+
+<p align="center">
+  <a href="#features">Features</a> &bull;
+  <a href="#architecture">Architecture</a> &bull;
+  <a href="#prerequisites">Prerequisites</a> &bull;
+  <a href="#installation--configuration">Installation</a> &bull;
+  <a href="#license">License</a> &bull;
+  <a href="#references">References</a> &bull;
+  <a href="README_zh-TW.md">繁體中文</a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Home%20Assistant-2025.6+-blue?logo=homeassistant" alt="HA 2025.6+"/>
+  <img src="https://img.shields.io/badge/Python-3.13+-blue?logo=python" alt="Python 3.13+"/>
+  <img src="https://img.shields.io/badge/License-MIT-green" alt="License"/>
+  <img src="https://img.shields.io/badge/HACS-Compatible-orange?logo=homeassistant" alt="HACS"/>
+  <img src="https://img.shields.io/badge/IoT%20Class-Local%20Polling-brightgreen" alt="Local Polling"/>
+  <img src="https://img.shields.io/badge/Modbus%20TCP-pymodbus-purple" alt="Modbus TCP"/>
+</p>
 
 ---
 
