@@ -47,15 +47,13 @@ class AtmocubeConfigFlow(ConfigFlow, domain=DOMAIN):
             port = user_input[CONF_PORT]
             slave_id = user_input[CONF_SLAVE_ID]
 
-            self._async_abort_entries_match({CONF_HOST: host})
+            await self.async_set_unique_id(f"atmocube_{host}")
+            self._abort_if_unique_id_configured()
 
             error = await self._async_validate_connection(host, port, slave_id)
             if error:
                 errors["base"] = error
             else:
-                await self.async_set_unique_id(f"atmocube_{host}")
-                self._abort_if_unique_id_configured()
-
                 return self.async_create_entry(
                     title=f"Atmocube ({host})",
                     data=user_input,
