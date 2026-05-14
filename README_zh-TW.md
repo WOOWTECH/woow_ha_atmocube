@@ -42,6 +42,8 @@
 - **單次批次 Modbus 讀取**（暫存器 64–83）
 - **連線中斷自動重連**
 
+---
+
 ## 架構
 
 ### 元件架構
@@ -93,6 +95,8 @@ graph LR
     E --> D
 ```
 
+---
+
 ## 前置需求
 
 ### 硬體需求
@@ -101,15 +105,27 @@ graph LR
 - 網路連線（Wi-Fi 2.4GHz 或乙太網路）
 - 與 Atmocube 在同一網路的 Home Assistant 主機
 
-### Atmocube 設定
+### Atmocube Dashboard App 設定
 
-1. 下載 **Atmocube Dashboard** App（iOS App Store / Google Play）
+1. 下載 **Atmocube Dashboard** App：
+   - [iOS App Store](https://apps.apple.com/us/app/atmocube-dashboard/id1582552605)
+   - [Google Play](https://play.google.com/store/apps/details?id=com.atmotech.atmocube.admin&hl=en&gl=US)
+
+   ![Atmocube Dashboard App](docs/images/atmocube-dashboard-app-1.PNG)
+
 2. 建立帳號並透過 App 配對 Atmocube
-3. 在 [https://atmocube.app/](https://atmocube.app/) 確認裝置顯示 **Online**
+
+   ![配對 Atmocube](docs/images/atmocube-dashboard-app-2.PNG)
+
+3. 配對成功後，裝置會顯示在 App 中
+
+   ![配對成功](docs/images/atmocube-dashboard-app-3.PNG)
+
+4. 在 [https://atmocube.app/](https://atmocube.app/) 確認裝置顯示 **Online**
+
+### 在 Atmotube 網站啟用 Modbus TCP
 
 ![Dashboard 總覽](docs/images/dashboard-overview.png)
-
-### 啟用 Modbus TCP
 
 1. 在 Atmocube Dashboard 網站，前往 **Devices** 並點選裝置的 **Edit**
 
@@ -124,6 +140,8 @@ graph LR
 > **提示**：建議透過路由器的 DHCP 保留功能為 Atmocube 設定固定 IP 位址，避免斷電或網路重啟後 IP 位址改變。
 
 > **重要**：請記下 **Device IP** 位址及 **Modbus IP Port** — 設定 Home Assistant 整合時會需要用到。
+
+---
 
 ## 安裝與設定
 
@@ -147,9 +165,6 @@ git clone https://github.com/WOOWTECH/woow_ha_atmocube.git
 ```
 
 2. 將 `custom_components/atmocube` 複製到 HA 設定目錄
-3. 重新啟動 Home Assistant
-
-目錄結構如下：
 
 ```
 <HA 設定目錄>/
@@ -165,7 +180,11 @@ git clone https://github.com/WOOWTECH/woow_ha_atmocube.git
 │       └── strings.json
 ```
 
-### 設定整合
+3. 重新啟動 Home Assistant
+
+---
+
+## 設定整合
 
 1. 前往 **Settings → Devices & Services**
 2. 點選 **+ Add Integration**，搜尋 **Atmocube**
@@ -177,15 +196,23 @@ git clone https://github.com/WOOWTECH/woow_ha_atmocube.git
 | Port | Modbus TCP 埠號 | `502` |
 | Modbus Slave ID | 裝置 ID | `1` |
 
+> **提示**：**Host**（Device IP）和 **Port**（Modbus IP Port）可在 [Atmotube 網站](https://atmocube.app/)的 **Device Diagnostics** 中查看。預設 **Slave ID** 為 `1`，且無法在 Atmotube 網站中更改。
+
+![設定步驟 1](docs/images/HA-atmocube-air-quality-sensor-setup-1.png)
+
+![設定步驟 2](docs/images/HA-atmocube-air-quality-sensor-setup-2.png)
+
 4. 點選 **Submit** — 整合會驗證連線
 
-### 驗證感測器
+---
+
+## 驗證感測器
 
 1. 前往 **Developer Tools → States**
 2. 篩選 `atmocube`
 3. 應可看到 20 個帶有數值的感測器實體
 
-#### 感測器列表
+### 感測器列表
 
 | 感測器 | 單位 | 說明 |
 |---|---|---|
@@ -210,25 +237,29 @@ git clone https://github.com/WOOWTECH/woow_ha_atmocube.git
 | VOC 指數 VOC Index | — | VOC 指數 |
 | NOx 指數 NOx Index | — | NOx 指數 |
 
-### 疑難排解
+---
 
-#### 所有感測器顯示「unavailable」
+## 疑難排解
+
+### 所有感測器顯示「unavailable」
 
 1. 檢查網路連線：`ping <Atmocube IP>`
 2. 確認已在 Dashboard 啟用 Modbus TCP
 3. 確認埠號和從機 ID 一致
 
-#### 感測器顯示「unknown」
+### 感測器顯示「unknown」
 
 - 等待 60 秒讓第一個測量週期完成
 
-#### 連線斷斷續續
+### 連線斷斷續續
 
 - 使用乙太網路取代 Wi-Fi
 - 設定固定 IP
 - 檢查 IP 位址衝突
 
-#### 啟用除錯日誌
+### 啟用除錯日誌
+
+Add the following to your `configuration.yaml`:
 
 ```yaml
 logger:
@@ -236,6 +267,8 @@ logger:
   logs:
     custom_components.atmocube: debug
 ```
+
+---
 
 ## 授權條款
 

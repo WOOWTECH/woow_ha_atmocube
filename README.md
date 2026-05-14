@@ -105,15 +105,27 @@ graph LR
 - Network connection (Wi-Fi 2.4 GHz or Ethernet)
 - Home Assistant instance on the same network
 
-### Atmocube Setup
+### Atmocube Dashboard App Setup
 
-1. Download the **Atmocube Dashboard** app ([iOS App Store](https://apps.apple.com/) / [Google Play](https://play.google.com/))
+1. Download the **Atmocube Dashboard** app:
+   - [iOS App Store](https://apps.apple.com/us/app/atmocube-dashboard/id1582552605)
+   - [Google Play](https://play.google.com/store/apps/details?id=com.atmotech.atmocube.admin&hl=en&gl=US)
+
+   ![Atmocube Dashboard App](docs/images/atmocube-dashboard-app-1.PNG)
+
 2. Create an account and pair the Atmocube via the app
-3. Verify the device shows **Online** at [https://atmocube.app/](https://atmocube.app/)
+
+   ![Pair Atmocube](docs/images/atmocube-dashboard-app-2.PNG)
+
+3. Once successfully paired, the device will appear in the app
+
+   ![Successfully Paired](docs/images/atmocube-dashboard-app-3.PNG)
+
+4. Verify the device shows **Online** at [https://atmocube.app/](https://atmocube.app/)
+
+### Enable Modbus TCP in Atmotube Website
 
 ![Dashboard Overview](docs/images/dashboard-overview.png)
-
-### Enable Modbus TCP
 
 1. On the Atmocube Dashboard website, go to **Devices** and click **Edit** on your device
 
@@ -183,6 +195,12 @@ graph LR
 | Host | IP address of your Atmocube | -- |
 | Port | Modbus TCP port | `502` |
 | Modbus Slave ID | Device ID | `1` |
+
+> **Note**: The **Host** (Device IP) and **Port** (Modbus IP Port) can be found on the [Atmotube website](https://atmocube.app/) under **Device Diagnostics**. The default **Slave ID** is `1` and cannot be changed on the Atmotube website.
+
+![Configuration Step 1](docs/images/HA-atmocube-air-quality-sensor-setup-1.png)
+
+![Configuration Step 2](docs/images/HA-atmocube-air-quality-sensor-setup-2.png)
 
 4. Click **Submit** -- the integration validates the connection
 
